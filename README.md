@@ -26,3 +26,22 @@
 - Фисташковый круг - кнопка активного экрана
 - Перечеркнутый круг - кнопка удаления метки
 - Стрелки - обозначения переходов между экранами, по нажатию кнопки
+## Примерный список виджетов
+* ReminderByLocation (Stateful. Созданный вручную)
+  * MaterialApp
+    * Scaffold
+      * NavigationBar
+        * NavigationDestination (Icons.list_alt, "Marks")
+        * NavigationDestination (Icons.map, "Map")
+        * NavigationDestination (Icons.edit, "Edit")
+      * IndexedStack
+        * ListView.builder
+          * Text (название метки)
+          * IconButton (удалить метку)
+            * Icons.close
+        * YandexMap
+        * Form
+          * TextFormField ("Название метки")
+          * TextFormField ("Сообщение внутри метки")
+          * YandexMapPositionSelector (пока не реализован. будет отвечать за выбор места на карте)
+          * ElevatedButton ("Создать")
